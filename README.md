@@ -6,14 +6,17 @@ This repository contains Java-based implementations of various tasks assigned to
 -TASKS_OVER-VIEW :
 
 Task 1: Number Game
+
 Objective:
 Develop a Java program for a number guessing game where the user tries to guess a randomly generated number within a specified range (e.g. 1 to 100).
 
 Task 2: Student Grade Calculator
+
 Objective:
 Create a Java program to calculate a student's grades based on the marks obtained in various subjects.
 
 Task 3: ATM Interface
+
 Objective:
 Develop a Java-based ATM interface that allows users to perform basic banking operations like withdrawing, depositing, and checking the balance.
 
