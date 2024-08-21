@@ -17,12 +17,12 @@ Task 3: ATM Interface
 Objective:
 Develop a Java-based ATM interface that allows users to perform basic banking operations like withdrawing, depositing, and checking the balance.
 
--TECHNOLOGY_USED:
+-TECHNOLOGY_USED :
 Programming Language: Java
 Tools: Command Line Interface, Java Development Kit (JDK)
 Concepts: Object-Oriented Programming, Control Structures, Input Validation
 
--CONCLUSION:
+-CONCLUSION :
 Completing these tasks during my CodSoft internship provided me with valuable experience in Java programming. I gained a deeper understanding of coding best practices, object-oriented design, and user interaction.
 
 
