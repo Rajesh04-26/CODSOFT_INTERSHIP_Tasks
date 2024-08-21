@@ -1,0 +1,81 @@
+import java.util.Random;
+import java.util.Scanner;
+
+class NumberGame {
+    private int randomNumber;
+    private int maxAttempts;
+    private int currentAttempt;
+    private int score;
+    private Scanner scanner;
+
+    public NumberGame(int maxAttempts) {
+        this.maxAttempts = maxAttempts;
+        this.scanner = new Scanner(System.in);
+    }
+
+    public void startGame() {
+        boolean playAgain;
+        do {
+            initializeRound();
+            playRound();
+            playAgain = askToPlayAgain();
+        } while (playAgain);
+
+        System.out.println("Thank you for playing! Your final score is: " + score);
+    }
+
+    private void initializeRound() {
+        Random random = new Random();
+        randomNumber = random.nextInt(100) + 1;
+        currentAttempt = 0;
+        System.out.println("\nNew round started! Guess the number between 1 and 100.");
+    }
+
+    private void playRound() {
+        boolean guessedCorrectly = false;
+
+        while (currentAttempt < maxAttempts && !guessedCorrectly) {
+            System.out.print("Enter your guess: ");
+            int guess = scanner.nextInt();
+            currentAttempt++;
+            guessedCorrectly = checkGuess(guess);
+        }
+
+        if (!guessedCorrectly) {
+            System.out.println("You've used all your attempts! The correct number was: " + randomNumber);
+        } else {
+            int pointsEarned = maxAttempts - currentAttempt + 1;
+            score += pointsEarned;
+            System.out.println("Congratulations! You guessed the number in " + currentAttempt + " attempts.");
+            System.out.println("You earned " + pointsEarned + " points. Your current score is: " + score);
+        }
+    }
+
+    private boolean checkGuess(int guess) {
+        if (guess == randomNumber) {
+            return true;
+        } else if (guess > randomNumber) {
+            System.out.println("Too high! Try again.");
+        } else {
+            System.out.println("Too low! Try again.");
+        }
+        return false;
+    }
+
+    private boolean askToPlayAgain() {
+        System.out.print("Do you want to play another round? (yes/no): ");
+        String response = scanner.next();
+        return response.equalsIgnoreCase("yes");
+    }
+}
+
+public class NumberGameApp {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Welcome to the Number Game! How many attempts would you like per round? ");
+        int maxAttempts = scanner.nextInt();
+
+        NumberGame game = new NumberGame(maxAttempts);
+        game.startGame();
+    }
+}
