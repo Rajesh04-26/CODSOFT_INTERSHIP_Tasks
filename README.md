@@ -1,4 +1,4 @@
-# CODSOFT_INTERSHIP_Tasks
+# INTERSHIP_Tasks
 
 -INTRODUCTION :
 This repository contains Java-based implementations of various tasks assigned to me during my CodSoft internship. The tasks cover a range of programming concepts, including control structures, object-oriented programming, and user interaction, all designed to strengthen my skills in software development.
